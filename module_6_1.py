@@ -4,6 +4,13 @@ class Animal:
         self.fed = False
         self.name = name
 
+    def eat(self, food):
+        if food.edible:
+            print(f"{self.name} cъел {food.name}")
+            self.fed = True
+        else:
+            print(f"{self.name} не стал есть {food.name}")
+            self.alive = False
 
 class Plant:
     edible = False
@@ -13,28 +20,13 @@ class Plant:
 
 
 class Mamal(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
-
+    pass
 
 class Predator(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
-
+    pass
 
 class Flower(Plant):
     pass
-
 
 class Fruit(Plant):
     edible = True
